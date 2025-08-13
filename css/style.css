@@ -1,0 +1,57 @@
+:root {
+  --tesla-red: #cc0000;
+  --black: #000;
+  --white: #fff;
+  --gray: #e6e6e6;
+  --charcoal: #333;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, var(--black), var(--charcoal));
+  color: var(--white);
+  text-align: center;
+}
+
+header {
+  background-color: var(--tesla-red);
+  padding: 1rem;
+}
+
+#map-container img {
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 20px;
+  border: 3px solid var(--tesla-red);
+  border-radius: 10px;
+}
+
+#question-box {
+  margin: 20px auto;
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  width: 60%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+input {
+  padding: 10px;
+  width: 70%;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--tesla-red);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #ff1a1a;
+}
