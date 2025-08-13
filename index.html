@@ -7,20 +7,33 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
+<header>
+  <div class="header-content">
+    <img src="assets/headshot.png" alt="Sai Jagan Yalamanchili" class="headshot" />
     <h1>Welcome to My AI & Multimodal Data Infrastructure Journey</h1>
-  </header>
-
+  </div>
+</header>
   <main>
-    <div id="map-container">
-      <img src="assets/world-map.png" alt="World Map" />
-    </div>
-    <div id="question-box">
-      <p id="question-text">Loading first question...</p>
-      <input type="text" id="answer-input" placeholder="Type your answer..." />
-      <button id="submit-answer">Submit</button>
-    </div>
-  </main>
+  <div id="map-container">
+  <img src="assets/world-map.png" alt="World Map" />
+  <!-- Pin overlay -->
+  <div id="pin-layer"></div>
+</div>
+
+
+  <div id="question-box">
+    <p id="question-text">Loading first question...</p>
+    <input type="text" id="answer-input" placeholder="Type your answer..." />
+    <button id="submit-answer">Submit</button>
+  </div>
+
+  <div id="experience-card" class="hidden">
+    <h2 id="experience-title"></h2>
+    <p id="experience-description"></p>
+    <button id="next-question">Next</button>
+  </div>
+</main>
+
 
   <footer>
     <p>&copy; 2025 Sai Jagan Yalamanchili</p>
@@ -28,4 +41,11 @@
 
   <script src="js/app.js"></script>
 </body>
+<!-- Radial Progress Tracker -->
+<div id="radial-progress">
+  <div class="circle">
+    <span id="progress-percent">0%</span>
+  </div>
+</div>
+
 </html>
