@@ -2,50 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sai Jagan Yalamanchili | AI & Data Infrastructure Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sai Jagan Yalamanchili | AI & Multimodal Data Infrastructure</title>
   <link rel="stylesheet" href="css/style.css" />
+  <meta name="theme-color" content="#cc0000" />
 </head>
 <body>
-<header>
-  <div class="header-content">
-    <img src="assets/headshot.png" alt="Sai Jagan Yalamanchili" class="headshot" />
-    <h1>Welcome to My AI & Multimodal Data Infrastructure Journey</h1>
-  </div>
-</header>
+  <!-- Particle background -->
+  <canvas id="bg"></canvas>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="header-content">
+      <img src="assets/headshot.png" alt="Sai Jagan Yalamanchili" class="headshot" />
+      <h1>Welcome to My AI & Multimodal Data Infrastructure Journey</h1>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
   <main>
-  <div id="map-container">
-  <img src="assets/world-map.png" alt="World Map" />
-  <!-- Pin overlay -->
-  <div id="pin-layer"></div>
-</div>
 
+    <!-- World Map + Pin Overlay + Arc Layer -->
+    <div id="map-container">
+      <img src="assets/world-map.png" alt="World Map" />
+      <div id="pin-layer"></div>
+      <svg id="arc-layer"></svg>
+    </div>
 
-  <div id="question-box">
-    <p id="question-text">Loading first question...</p>
-    <input type="text" id="answer-input" placeholder="Type your answer..." />
-    <button id="submit-answer">Submit</button>
-  </div>
+    <!-- Q&A Box -->
+    <div id="question-box">
+      <div id="progress" class="progress"></div>
+      <p id="question-text">Loading first question...</p>
+      <input
+        type="text"
+        id="answer-input"
+        placeholder="Type your answer..."
+        aria-label="Answer input"
+        autocomplete="off"
+      />
+      <button id="submit-answer">Submit</button>
+    </div>
 
-  <div id="experience-card" class="hidden">
-    <h2 id="experience-title"></h2>
-    <p id="experience-description"></p>
-    <button id="next-question">Next</button>
-  </div>
-</main>
+    <!-- Experience / Education / Skills Reveal Card -->
+    <div id="experience-card" class="hidden">
+      <h2 id="experience-title"></h2>
+      <div id="experience-description"></div>
+      <button id="next-question">Next</button>
+    </div>
 
+  </main>
 
+  <!-- ===== Footer ===== -->
   <footer>
     <p>&copy; 2025 Sai Jagan Yalamanchili</p>
   </footer>
 
-  <script src="js/app.js"></script>
-</body>
-<!-- Radial Progress Tracker -->
-<div id="radial-progress">
-  <div class="circle">
-    <span id="progress-percent">0%</span>
+  <!-- ===== Radial Progress Tracker ===== -->
+  <div id="radial-progress">
+    <div class="circle">
+      <span id="progress-percent">0%</span>
+    </div>
   </div>
-</div>
 
+  <!-- ===== Scripts ===== -->
+  <script src="js/app.js?v=5"></script>
+  <noscript>Your browser needs JavaScript enabled to view this interactive portfolio.</noscript>
+</body>
 </html>

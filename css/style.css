@@ -1,3 +1,4 @@
+/* ===== Tesla Color Palette ===== */
 :root {
   --tesla-red: #cc0000;
   --black: #000;
@@ -6,6 +7,7 @@
   --charcoal: #333;
 }
 
+/* ===== Global ===== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -14,87 +16,16 @@ body {
   text-align: center;
 }
 
+/* ===== Header ===== */
 header {
   background-color: var(--tesla-red);
   padding: 1rem;
 }
-
-#map-container img {
-  width: 80%;
-  max-width: 1000px;
-  margin-top: 20px;
-  border: 3px solid var(--tesla-red);
-  border-radius: 10px;
-}
-
-#question-box {
-  margin: 20px auto;
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  width: 60%;
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-}
-
-input {
-  padding: 10px;
-  width: 70%;
-  border: none;
-  border-radius: 5px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: var(--tesla-red);
-  color: var(--white);
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-button:hover {
-  background-color: #ff1a1a;
-}
-.headshot {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid var(--tesla-red);
-  margin-bottom: 10px;
-  object-fit: cover;
-}
-header {
-  background-color: var(--tesla-red);
-  padding: 1rem;
-  text-align: center;
-}
-
 .header-content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.headshot {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid var(--white);
-  margin-bottom: 10px;
-  object-fit: cover;
-}
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px var(--tesla-red), 0 0 20px var(--tesla-red);
-  }
-  50% {
-    box-shadow: 0 0 20px var(--tesla-red), 0 0 40px var(--tesla-red);
-  }
-  100% {
-    box-shadow: 0 0 10px var(--tesla-red), 0 0 20px var(--tesla-red);
-  }
-}
-
 .headshot {
   width: 150px;
   height: 150px;
@@ -105,100 +36,29 @@ header {
   background-color: var(--black);
   animation: glow 2s infinite ease-in-out;
 }
-/* Hide elements initially */
-.hidden {
-  display: none;
+@keyframes glow {
+  0%   { box-shadow: 0 0 10px var(--tesla-red), 0 0 20px var(--tesla-red); }
+  50%  { box-shadow: 0 0 20px var(--tesla-red), 0 0 40px var(--tesla-red); }
+  100% { box-shadow: 0 0 10px var(--tesla-red), 0 0 20px var(--tesla-red); }
 }
 
-/* Map fade & zoom out */
-.fade-zoom-out {
-  animation: fadeZoomOut 1s forwards;
-}
-
-@keyframes fadeZoomOut {
-  to {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-}
-
-/* Experience card slide-in */
-#experience-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  backdrop-filter: blur(10px);
-  animation: slideIn 1s forwards;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Small progress label inside the question box */
-.progress {
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-  color: var(--gray);
-  opacity: 0.9;
-}
-
-/* Badge and bullets in the reveal card */
-.tag {
-  display: inline-block;
-  padding: 4px 10px;
-  border: 1px solid var(--tesla-red);
-  border-radius: 999px;
-  font-size: 0.8rem;
-  letter-spacing: 0.3px;
-  margin-bottom: 10px;
-}
-
-.bullets {
-  text-align: left;
-  max-width: 800px;
-  margin: 12px auto 0 auto;
-  line-height: 1.6;
-}
-
-.bullets li { margin: 6px 0; }
-
-/* CTA button */
-.cta { margin-top: 16px; }
-.btn {
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  background: var(--tesla-red);
-  color: var(--white);
-  font-weight: 600;
-}
-.btn:hover { filter: brightness(1.1); }
-/* Ensure the map can host absolutely-positioned pins */
+/* ===== World Map ===== */
 #map-container {
   position: relative;
   display: inline-block;
 }
-
-/* Pin overlay layer */
+#map-container img {
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 20px;
+  border: 3px solid var(--tesla-red);
+  border-radius: 10px;
+}
 #pin-layer {
   position: absolute;
   inset: 0;
-  pointer-events: none; /* clicks go through to the map if needed */
+  pointer-events: none;
 }
-
-/* Base pin */
 .pin {
   position: absolute;
   width: 12px;
@@ -210,22 +70,17 @@ header {
   box-shadow: 0 0 6px rgba(0,0,0,0.4);
   opacity: 0.7;
 }
-
-/* Active (unlocked) pin pulsates Tesla red */
 .pin.active {
   background: var(--tesla-red);
   border-color: var(--white);
   opacity: 1;
   animation: pinPulse 1.2s infinite ease-in-out;
 }
-
 @keyframes pinPulse {
   0%   { box-shadow: 0 0 8px rgba(204,0,0,0.6); }
   50%  { box-shadow: 0 0 18px rgba(204,0,0,0.95); }
   100% { box-shadow: 0 0 8px rgba(204,0,0,0.6); }
 }
-
-/* Optional tiny labels */
 .pin::after {
   content: attr(data-label);
   position: absolute;
@@ -236,7 +91,109 @@ header {
   color: var(--gray);
   opacity: 0.9;
 }
-/* Radial Progress Circle */
+#arc-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+@keyframes arcDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ===== Q&A Box ===== */
+#question-box {
+  margin: 20px auto;
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  width: 60%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+#question-box input {
+  padding: 10px;
+  width: 70%;
+  border: none;
+  border-radius: 5px;
+}
+#question-box button {
+  padding: 10px 20px;
+  background-color: var(--tesla-red);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#question-box button:hover {
+  background-color: #ff1a1a;
+}
+
+/* ===== Reveal Card ===== */
+.hidden { display: none; }
+#experience-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  backdrop-filter: blur(10px);
+}
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--tesla-red);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+}
+.bullets {
+  text-align: left;
+  max-width: 800px;
+  margin: 12px auto 0 auto;
+  line-height: 1.6;
+}
+.bullets li { margin: 6px 0; }
+.cta { margin-top: 16px; }
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: var(--tesla-red);
+  color: var(--white);
+  font-weight: 600;
+}
+.btn:hover { filter: brightness(1.1); }
+
+/* ===== Flip Animations ===== */
+.flip-out {
+  animation: flipOut 0.6s forwards ease;
+}
+@keyframes flipOut {
+  to { transform: rotateY(15deg) scale(.96); opacity:.05; filter: blur(2px); }
+}
+.card-in {
+  animation: cardIn 0.6s forwards ease;
+}
+@keyframes cardIn {
+  from { transform: rotateY(-15deg) translateY(10px); opacity:0; }
+  to { transform: rotateY(0) translateY(0); opacity:1; }
+}
+
+/* ===== Typewriter ===== */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--white);
+  animation: caret .8s step-end infinite;
+}
+@keyframes caret {
+  50% { border-color: transparent; }
+}
+
+/* ===== Radial Progress ===== */
 #radial-progress {
   position: fixed;
   top: 20px;
@@ -245,7 +202,6 @@ header {
   height: 70px;
   z-index: 999;
 }
-
 #radial-progress .circle {
   --p: 0;
   --size: 70px;
@@ -254,7 +210,7 @@ header {
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background: conic-gradient(var(--fill) calc(var(--p) * 1%), var(--track) 0);
+  background: conic-gradient(var(--fill) calc(var(--p) * 100%), var(--track) 0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -262,10 +218,30 @@ header {
   font-weight: bold;
   color: var(--white);
   box-shadow: 0 0 8px rgba(204,0,0,0.8);
+  transition: background 0.4s ease;
 }
-
 #radial-progress .circle span {
   position: relative;
   z-index: 1;
 }
 
+/* ===== Confetti ===== */
+.confetti {
+  position: fixed;
+  width: 6px;
+  height: 10px;
+  top: -10px;
+  opacity: .9;
+  animation: fall 2s linear forwards;
+}
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(720deg); }
+}
+
+/* ===== Particle Background ===== */
+#bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: transparent;
+}
